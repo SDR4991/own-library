@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/js/lib/core.js":
@@ -7,7 +8,6 @@
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -40,7 +40,6 @@ window.$ = $;
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -51,7 +50,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_handlers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/handlers */ "./src/js/lib/modules/handlers.js");
 /* harmony import */ var _modules_attributes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/attributes */ "./src/js/lib/modules/attributes.js");
 /* harmony import */ var _modules_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/actions */ "./src/js/lib/modules/actions.js");
-/* harmony import */ var _modules_actions__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modules_actions__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
@@ -66,9 +64,99 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************************!*\
   !*** ./src/js/lib/modules/actions.js ***!
   \***************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
 
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.html = function (content) {
+  for (let i = 0; i < this.length; i++) {
+    if (content) {
+      this[i].innerHTML = content;
+    } else {
+      return this[i].innerHTML;
+    }
+  }
+  return this;
+};
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.eq = function (i) {
+  const swap = this[i];
+  const objLength = Object.keys(this).length;
+  for (let i = 0; i < objLength; i++) {
+    delete this[i];
+  }
+  this[0] = swap;
+  this.length = 1;
+  return this;
+};
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.index = function () {
+  const parent = this[0].parentNode;
+  const childs = [...parent.children];
+  const findMyIndex = item => {
+    return item == this[0];
+  };
+  return childs.findIndex(findMyIndex);
+};
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.find = function (selector) {
+  let numberOfItems = 0;
+  let counter = 0;
+  const copyObj = Object.assign({}, this);
+  for (let i = 0; i < copyObj.length; i++) {
+    const arr = copyObj[i].querySelectorAll(selector);
+    if (arr.length == 0) {
+      continue;
+    }
+    for (let j = 0; j < arr.length; j++) {
+      this[counter] = arr[j];
+      counter++;
+    }
+    numberOfItems += arr.length;
+  }
+  this.length = numberOfItems;
+  const objLength = Object.keys(this).length;
+  for (; numberOfItems < objLength.length; numberOfItems++) {
+    delete this[numberOfItems];
+  }
+  return this;
+};
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.closest = function (selector) {
+  let counter = 0;
+  for (let i = 0; i < this.length; i++) {
+    if (this[i].closest(selector) === null) {
+      return this;
+    } else {
+      this[i] = this[i].closest(selector);
+      counter++;
+    }
+  }
+  const objLength = Object.keys(this).length;
+  for (; counter < objLength; counter++) {
+    delete this[counter];
+  }
+  return this;
+};
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.siblings = function () {
+  let numberOfItems = 0;
+  let counter = 0;
+  const copyObj = Object.assign({}, this);
+  for (let i = 0; i < copyObj.length; i++) {
+    const arr = copyObj[i].parentNode.children;
+    for (let j = 0; j < arr.length; j++) {
+      if (copyObj[i] === arr[i]) {
+        continue;
+      }
+      this[counter] = arr[j];
+      counter++;
+    }
+    numberOfItems += arr.length;
+  }
+  this.length = numberOfItems;
+  const objLength = Object.keys(this).length;
+  for (; numberOfItems < objLength.length; numberOfItems++) {
+    delete this[numberOfItems];
+  }
+  return this;
+};
 
 /***/ }),
 
@@ -78,7 +166,6 @@ __webpack_require__.r(__webpack_exports__);
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
 
@@ -109,7 +196,6 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.getAttr = function (attr
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
 
@@ -140,7 +226,6 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggleClass = function (
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
 
@@ -184,7 +269,6 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggle = function () {
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
 
@@ -244,18 +328,6 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.click = function (handle
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -286,17 +358,27 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.click = function (handle
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-"use strict";
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
-$('button').on("click", '');
-$('button').setAttr("disabled", "disabled");
+$('button').on("click", function () {
+  $('div').eq(2).toggleClass('active');
+});
+$('button').removeAttr("disabled", "disabled").html('Check');
+$('div').click(function () {
+  console.log($(this).index());
+});
+
+/* console.log($('div').eq(2).find('.more')); */
+
+/* console.log($('.some').closest('.find')) */
+
+console.log($('.find').siblings());
 })();
 
 /******/ })()
