@@ -13,22 +13,61 @@
         <button class="btn btn-dark m20" data-count="second">Fade out second text</button>
         <button class="btn btn-warning m20">Fade out all texts</button>
 
-        <div class="w-500 block-center mt-20">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi maiores unde sit officia dolores totam, ea odit consectetur quos architecto accusantium porro, assumenda hic soluta nostrum voluptatum libero. Asperiores, debitis.
-            Ipsa ea architecto maxime! Eveniet vero dignissimos ipsam cum quam voluptatibus consequuntur exercitationem vitae nobis corrupti necessitatibus deleniti in eaque, labore quae illo, provident sequi doloremque doloribus? Vel, optio repellendus!
-            Provident placeat repellendus culpa hic earum asperiores, blanditiis quasi nemo similique praesentium adipisci deserunt perferendis quibusdam, dolore modi sequi, sint obcaecati odio. Rem ullam quas alias natus maiores nostrum obcaecati.
-            Porro iure ea soluta modi nihil obcaecati, quod ad quisquam omnis error praesentium cum adipisci recusandae assumenda aliquam culpa fuga illo facilis saepe reiciendis reprehenderit sequi repellendus veritatis atque? Non.
-            Dicta incidunt, assumenda ipsam adipisci voluptates, cumque aspernatur amet quae iusto corporis fuga ea quasi saepe optio quo dolorum magni. At dolore deleniti nostrum necessitatibus, vel rem cumque maxime quidem.
+        <!-- Dropdown menu -->
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton">Dropdown button</button>
+            <div class="dropdown-menu" data-toggle-id="dropdownMenuButton">
+                <a href="#" class="dropdown-item">Action</a>
+                <a href="#" class="dropdown-item">Action #2</a>
+                <a href="#" class="dropdown-item">Action #3</a>
+            </div>
         </div>
         
-        <div class="w-500 block-center mt-20">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi maiores unde sit officia dolores totam, ea odit consectetur quos architecto accusantium porro, assumenda hic soluta nostrum voluptatum libero. Asperiores, debitis.
-            Ipsa ea architecto maxime! Eveniet vero dignissimos ipsam cum quam voluptatibus consequuntur exercitationem vitae nobis corrupti necessitatibus deleniti in eaque, labore quae illo, provident sequi doloremque doloribus? Vel, optio repellendus!
-            Provident placeat repellendus culpa hic earum asperiores, blanditiis quasi nemo similique praesentium adipisci deserunt perferendis quibusdam, dolore modi sequi, sint obcaecati odio. Rem ullam quas alias natus maiores nostrum obcaecati.
-            Porro iure ea soluta modi nihil obcaecati, quod ad quisquam omnis error praesentium cum adipisci recusandae assumenda aliquam culpa fuga illo facilis saepe reiciendis reprehenderit sequi repellendus veritatis atque? Non.
-            Dicta incidunt, assumenda ipsam adipisci voluptates, cumque aspernatur amet quae iusto corporis fuga ea quasi saepe optio quo dolorum magni. At dolore deleniti nostrum necessitatibus, vel rem cumque maxime quidem.
+        <!-- Card -->
+        <div class="goods d-flex f-space-around">
+            <div class="card">
+                <img class="card-img" src="https://img.freepik.com/free-photo/free-photo-ramadan-kareem-eid-mubarak-royal-elegant-lamp-with-mosque-holy-gate-with-fireworks_1340-23674.jpg?w=1060&t=st=1710685297~exp=1710685897~hmac=3ba0ac9a456d2f77d259cfd493b7d85a1567928cbe97cb42fbae81e8670b778c" alt="photo">
+                <div class="card-body">
+                    <div class="card-title">Card Title</div>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti blanditiis officia neque aspernatur vero fugit aliquam atque corporis numquam. Impedit quo ex perferendis, praesentium asperiores omnis ratione autem eveniet dignissimos.
+                    </p>
+                    <a href="" class="btn btn-primary">Link to</a>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img" src="https://img.freepik.com/free-photo/free-photo-ramadan-kareem-eid-mubarak-royal-elegant-lamp-with-mosque-holy-gate-with-fireworks_1340-23674.jpg?w=1060&t=st=1710685297~exp=1710685897~hmac=3ba0ac9a456d2f77d259cfd493b7d85a1567928cbe97cb42fbae81e8670b778c" alt="photo">
+                <div class="card-body">
+                    <div class="card-title">Card Title #2</div>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti blanditiis officia neque aspernatur vero fugit aliquam atque corporis numquam. Impedit quo ex perferendis, praesentium asperiores omnis ratione autem eveniet dignissimos.
+                    </p>
+                    <a href="" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Link to</a>
+                </div>
+            </div>
         </div>
 
+        <div class="modal" id="exampleModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <button class="close" data-close>
+                        <span>&times;</span>
+                    </button>
+                    <div class="modal-header">
+                        <div class="modal-title">
+                            Modal Title
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas iste commodi veritatis porro quaerat laudantium similique minima, ullam quam numquam, eaque dicta voluptatibus et unde a asperiores adipisci accusamus! Nobis.
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" data-close>
+                            Close
+                        </button>
+                        <div class="button btn btn-success">Save Changes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
     <script src='script.js'></script>
